@@ -8,7 +8,7 @@ First Go project using [cobra](https://github.com/spf13/cobra)
 For Windows (.exe) [GoogleDrive](https://drive.google.com/file/d/1dvBEztS2b6mnB29wLQ5qsjyf_4SzPA09/view?usp=sharing) <br>
 For Linux (excutable file) [GoogleDrive](https://drive.google.com/file/d/1dFjLVsPA97E10byQqEPEgfVXI2oUFbCW/view?usp=sharing)
 
-# Windows 🟦🟦 🟥🟩<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟦🟦 🟦🟨
+# Windows 🟦
 I've found Powershell Installation the best<br>
 [Powershell Path and Aliases Tutorial](https://www.youtube.com/watch?v=4e4lGUVRKFs)
 
@@ -28,4 +28,3 @@ I've found Powershell Installation the best<br>
 
 ```sudo nano ~/.bashrc```<br />
 ```alias myip='/your_path/./myip'```
-```myip is working now```
