@@ -5,8 +5,8 @@ First Go project using [cobra](https://github.com/spf13/cobra)
 <img src="https://i.imgur.com/mhLCXCG.jpg"><br />
 
 # Installation 🔨
-For Windows (.exe) [GoogleDrive](https://drive.google.com/file/d/1dvBEztS2b6mnB29wLQ5qsjyf_4SzPA09/view?usp=sharing) <br>
-For Linux (excutable file) [GoogleDrive](https://drive.google.com/file/d/1dFjLVsPA97E10byQqEPEgfVXI2oUFbCW/view?usp=sharing)
+For Windows (.exe) [GoogleDrive](https://drive.google.com/file/d/1Du9M463piig79o05puKJnyYqTb2IhE1z/view?usp=sharing) <br>
+For Linux (excutable file) [GoogleDrive](https://drive.google.com/file/d/1VMXo_0oJOlrFljkRaQXIxsF5A4rjPma_/view?usp=sharing)
 
 # Windows 🟦
 I've found Powershell Installation the best<br>
@@ -18,13 +18,15 @@ I've found Powershell Installation the best<br>
 ```$profile```<br>
 
 ```Add the alias to your profile```<br>
+```notepad $profile```<br>
+```set-location c:\```<br>
 ```new-alias myip \your_path\myip.exe```<br>
 ```from powershell you can just type:  myip```<br>
 ```from cmd type: powershell myip```
 
 # *nix 🐧🍏
 ```Download (or take one after compiling on your PC) myip excutable file and save it somewhere``` <br />
-```Add an alias in your bashrc profile for the myip command``` <br />
+```Add the alias to your profile``` <br />
 
 ```sudo nano ~/.bashrc```<br />
 ```alias myip='/your_path/./myip'```
