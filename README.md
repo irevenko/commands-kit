@@ -1,7 +1,14 @@
-# myip 🌐
-First Go project using [cobra](https://github.com/spf13/cobra)
+# Commands Kit 📜
+First Go project using [cobra](https://github.com/spf13/cobra)<br>
+There are some commands which i've implemented using Go
+# List of commands 📋
+* [myip](#myip-🌐 "Goto #myip-🌐") 
 
-# Preview 🔍
+# myip 🌐
+Check your IP settings with this command<br>
+Basically it sends GET request to ipinfo.io
+
+# Demo 🔜
 <img src="https://i.imgur.com/mhLCXCG.jpg"><br />
 
 # Installation 🔨
@@ -32,10 +39,9 @@ I've found Powershell Installation the best<br>
 ```alias myip='/your_path/./myip'```
 
 # What I Learned 🧠
-* How to send GET Request, and get a JSON
-* Modules, Packages and Imports in Go
-* How to build and compile projects in Go
-* How to use cobra, Errors handling in Go
 
 # License 📑 
 (c) 2020 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)
+
+#TODO Mac support
+#typeof body, fix display

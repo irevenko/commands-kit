@@ -16,7 +16,6 @@ vendor/
 src/
 pkg/
 bin/
+coverage/
 Gopkg.lock
 Gopkg.toml
-.Makefile
-Makefile
