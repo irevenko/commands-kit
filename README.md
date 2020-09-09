@@ -3,6 +3,8 @@ First Go project using [cobra](https://github.com/spf13/cobra)<br>
 There are some commands which i've implemented using Go
 # List of commands 📋
 * [myip](#myip- "Goto #myip-🌐") 
+* [compare](#compare- "Goto #") 
+* [encrypt](#encrypt- "Goto #") 
 
 # myip 🌐
 Check your IP settings with this command<br>

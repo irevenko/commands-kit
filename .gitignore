@@ -19,3 +19,6 @@ bin/
 coverage/
 Gopkg.lock
 Gopkg.toml
+
+1.txt
+2.txt

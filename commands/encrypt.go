@@ -16,6 +16,6 @@ func main() {
 	hash := sha256.New()
 	hash.Write([]byte(text))
 
-	sha_hash := hex.EncodeToString(hash.Sum(nil))
-	fmt.Println("Encoded data:\n", sha_hash)
+	shaHash := hex.EncodeToString(hash.Sum(nil))
+	fmt.Println("Encoded data:\n", shaHash)
 }
