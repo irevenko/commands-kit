@@ -5,6 +5,7 @@ There are some commands which i've implemented using Go
 * [myip](#myip- "Goto #myip-🌐") 
 * [compare](#compare- "Goto #") 
 * [encrypt](#encrypt- "Goto #") 
+* [decrypt](#decrypt- "Goto #") 
 
 # myip 🌐
 Check your IP settings with this command<br>
@@ -43,6 +44,9 @@ I've found Powershell Installation the best<br>
 # What I Learned 🧠
 * How to send GET request
 * Error handling in Go
+
+# ToDo
+* Update compare command
 
 # License 📑 
 (c) 2020 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)
