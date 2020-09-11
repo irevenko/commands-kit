@@ -14,7 +14,7 @@ func main() {
 	var cmd = &cobra.Command{
 		Use:   "myip",
 		Short: "Check your IP Adress Data",
-		Long:  "A simple CLI tool for getting your IP Adress Data \nSource code: https://github.com/irevenko/myip",
+		Long:  "A simple CLI tool for getting your IP Adress Data \nSource code: https://github.com/irevenko/commands-kit",
 		Run: func(cmd *cobra.Command, args []string) {
 			const url string = "https://ipinfo.io"
 

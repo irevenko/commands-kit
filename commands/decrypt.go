@@ -7,6 +7,8 @@ import (
 	"encoding/hex"
 	"fmt"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
 func decrypt(encryptedString string, keyString string) (decryptedString string) {
@@ -36,13 +38,25 @@ func decrypt(encryptedString string, keyString string) (decryptedString string) 
 }
 
 func main() {
-	bytes := []byte{222, 158, 110, 144, 26, 231, 109, 23, 128, 200, 132, 158, 84, 38, 149, 145, 59, 9, 50, 213, 12, 47, 164, 22, 199, 65, 131, 86, 189, 54, 144, 198}
-	key := hex.EncodeToString(bytes)
+	var cmd = &cobra.Command{
+		Use:   "decrypt",
+		Short: "Dencrypt an AES message",
+		Long:  "A simple CLI tool for encrypting your data \nSource code: https://github.com/irevenko/commands-kit",
+		Run: func(cmd *cobra.Command, args []string) {
+			bytes := []byte{222, 158, 110, 144, 26, 231, 109, 23, 128, 200, 132, 158, 84, 38, 149, 145, 59, 9, 50, 213, 12, 47, 164, 22, 199, 65, 131, 86, 189, 54, 144, 198}
+			key := hex.EncodeToString(bytes)
 
-	fmt.Println("Enter your encrypted message:")
-	input := bufio.NewReader(os.Stdin)
-	text, _ := input.ReadString('\n')
+			fmt.Println("Enter your encrypted message:")
+			input := bufio.NewReader(os.Stdin)
+			text, _ := input.ReadString('\n')
 
-	decrypted := decrypt(text, key)
-	fmt.Printf("decrypted message: %s\n", decrypted)
+			decrypted := decrypt(text, key)
+			fmt.Printf("decrypted message: %s\n", decrypted)
+		},
+	}
+
+	if err := cmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
