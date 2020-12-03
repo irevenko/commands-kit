@@ -1,37 +1,52 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
-
-	"github.com/spf13/cobra"
+	"time"
 )
 
+// A Response struct to map the Entire Response
+type Response struct {
+	Name    string    `json:"name"`
+	Pokemon []Pokemon `json:"pokemon_entries"`
+}
+
+// A Pokemon Struct to map every pokemon to.
+type Pokemon struct {
+	EntryNo int            `json:"entry_number"`
+	Species PokemonSpecies `json:"pokemon_species"`
+}
+
+// PokemonSpecies is the Struct to map Pokemon Struct
+type PokemonSpecies struct {
+	Name string `json:"name"`
+}
+
 func main() {
-	var cmd = &cobra.Command{
-		Use:   "pokemon",
-		Short: "Get random pokemon data",
-		Long:  "Get random pokemon data from the PokeAPI \nSource code: https://github.com/irevenko/commands-kit",
-		Run: func(cmd *cobra.Command, args []string) {
-			const url string = "https://pokeapi.co/api/v2/pokedex/national"
+	rand.Seed(time.Now().UnixNano())
+	randPokemon := rand.Intn(899)
 
-			req, err := http.NewRequest("GET", url, nil)
-			res, err := http.DefaultClient.Do(req)
-			if err != nil {
-				log.Fatal(err)
-			}
-
-			defer res.Body.Close()
-			body, _ := ioutil.ReadAll(res.Body)
-			fmt.Println(string(body))
-		},
-	}
-
-	if err := cmd.Execute(); err != nil {
-		fmt.Println(err)
+	response, err := http.Get("http://pokeapi.co/api/v2/pokedex/national/")
+	if err != nil {
+		fmt.Print(err.Error())
 		os.Exit(1)
 	}
+
+	responseData, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var responseObject Response
+	json.Unmarshal(responseData, &responseObject)
+
+	fmt.Println(len(responseObject.Pokemon))
+	fmt.Println(responseObject.Pokemon[randPokemon].Species.Name)
+
 }
