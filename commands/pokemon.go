@@ -13,7 +13,6 @@ import (
 
 // A Response struct to map the Entire Response
 type Response struct {
-	Name    string    `json:"name"`
 	Pokemon []Pokemon `json:"pokemon_entries"`
 }
 
@@ -26,6 +25,15 @@ type Pokemon struct {
 // PokemonSpecies is the Struct to map Pokemon Struct
 type PokemonSpecies struct {
 	Name string `json:"name"`
+	URL  string `json:"url"`
+}
+
+// PokemonDescription is for detailed info
+type PokemonDescription struct {
+	CaptureRate int64 `json:"capture_rate"`
+	Color       struct {
+		Name string `json:"name"`
+	} `json:"color"`
 }
 
 func main() {
@@ -46,7 +54,23 @@ func main() {
 	var responseObject Response
 	json.Unmarshal(responseData, &responseObject)
 
-	fmt.Println(len(responseObject.Pokemon))
-	fmt.Println(responseObject.Pokemon[randPokemon].Species.Name)
+	resp, err := http.Get(responseObject.Pokemon[randPokemon].Species.URL)
+	if err != nil {
+		fmt.Print(err.Error())
+		os.Exit(1)
+	}
 
+	respData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var respObj PokemonDescription
+	json.Unmarshal(respData, &respObj)
+
+	// total pokemons in the pokedex fmt.Println(len(responseObject.Pokemon))
+	fmt.Println(responseObject.Pokemon[randPokemon].Species.Name)
+	fmt.Println(respObj.CaptureRate)
+	fmt.Println(respObj.Color.Name)
+	fmt.Println(responseObject.Pokemon[randPokemon].Species.URL)
 }
