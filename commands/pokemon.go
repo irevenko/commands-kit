@@ -87,20 +87,19 @@ func main() {
 			var pokemonObject PokemonDescription
 			json.Unmarshal(pokemonData, &pokemonObject)
 
-			fmt.Println("Name: " + pokedexObject.Pokemon[randPokemon].Species.Name)
-			fmt.Println("Capture rate: " + strconv.Itoa(pokemonObject.CaptureRate))
-			fmt.Println("Base Happiness: " + strconv.Itoa(pokemonObject.BaseHappiness))
-			fmt.Println("Pokedex Number: " + strconv.Itoa(pokedexObject.Pokemon[randPokemon].EntryNo))
-			fmt.Println("Color: " + pokemonObject.Color.Name)
-			fmt.Println("Shape: " + pokemonObject.Shape.Name)
-			fmt.Println("Growth Rate: " + pokemonObject.GrowthRate.Name)
+			fmt.Println("➡️  Name: " + pokedexObject.Pokemon[randPokemon].Species.Name)
+			fmt.Println("✔️  Capture rate: " + strconv.Itoa(pokemonObject.CaptureRate))
+			fmt.Println("🎉 Base Happiness: " + strconv.Itoa(pokemonObject.BaseHappiness))
+			fmt.Println("🌐 Pokedex Number: " + strconv.Itoa(pokedexObject.Pokemon[randPokemon].EntryNo))
+			fmt.Println("🔲 Color: " + pokemonObject.Color.Name)
+			fmt.Println("🔳 Shape: " + pokemonObject.Shape.Name)
+			fmt.Println("📈 Growth Rate: " + pokemonObject.GrowthRate.Name)
 			for k, v := range pokemonObject.FlavorTextEntries {
 				if v.Language.Name == "en" {
-					fmt.Println("Flavor Text: " + pokemonObject.FlavorTextEntries[k].Text)
+					fmt.Println("📒 Flavor Text: " + pokemonObject.FlavorTextEntries[k].Text)
 					break
 				}
 			}
-			fmt.Println(pokedexObject.Pokemon[randPokemon].Species.URL)
 		},
 	}
 
