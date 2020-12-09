@@ -10,6 +10,9 @@ There are some terminal commands which i've implemented using GoLang
 * [cat](#cat- "Goto #cat-🐱") 
 * [chars_count](#chars_count- "Goto #chars_count-🅱️") 
 * [words_count](#words_count- "Goto #words_count-🆎") 
+* [mkdir](#mkdir- "Goto #mkdir-📂") 
+* [touch](#touch- "Goto #touch-📄") 
+
 
 # myip 🌐
 Check your IP settings with this command<br>
@@ -34,6 +37,12 @@ Counts chars
 
 # words_count 🆎
 Counts words
+
+# mkdir 📂
+Creates directory
+
+# touch 📄
+Creates file
 
 # Preview 🔍
 <img src="https://i.imgur.com/mhLCXCG.jpg"><br />
