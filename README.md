@@ -12,6 +12,8 @@ There are some terminal commands which i've implemented using GoLang
 * [words_count](#words_count- "Goto #words_count-🆎") 
 * [mkdir](#mkdir- "Goto #mkdir-📂") 
 * [touch](#touch- "Goto #touch-📄") 
+* [pwd](#pwd- "Goto #pwd-🗃") 
+* [rm](#rm- "Goto #rm-❌") 
 
 
 # myip 🌐
@@ -43,6 +45,12 @@ Creates directory
 
 # touch 📄
 Creates file
+
+# pwd 🗃
+Prints current working directory
+
+# rm ❌
+Deletes files or directories
 
 # Preview 🔍
 <img src="https://i.imgur.com/mhLCXCG.jpg"><br />
